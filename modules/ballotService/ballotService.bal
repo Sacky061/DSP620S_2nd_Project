@@ -1,6 +1,6 @@
 import ballerina/io;
 import ballerinax/kafka; 
-//Removed by Jose: import ballerina/lang.'string;
+//Removed by Prof Jose: import ballerina/lang.'string;
 //import ballerina/lang.'value;
 import ballerina/log;
 
@@ -19,7 +19,7 @@ listener kafka:Listener cons = new (consConf);
 
 service kafkaService on cons {
 	remote function onConsumerRecord(kafka:Consumer kafkaConsumer, kafka:ConsumerRecord[] records) {
-		//On ballerina.io its kafka:Caller insted of consumer
+		//side note: On ballerina.io its kafka:Caller insted of consumer
 		foreach var rec in records
 		{
 			processKafkaRecord(rec);
