@@ -1,0 +1,37 @@
+syntax = "proto3";
+package src;
+import "google/protobuf/wrappers.proto";
+
+service VoTo 
+{
+    rpc ballotDescription(ballotInfo) returns (google.protobuf.StringValue);
+    rpc voterProfile(voterInfo) returns (google.protobuf.StringValue);
+    rpc votingPeriod(votingInfo) returns (google.protobuf.StringValue);
+    rpc votingOutcomeDeadline(outcomeInfo) returns (google.protobuf.StringValue);
+}
+message ballotInfo 
+{
+	string candidate = 1;
+	string position = 2;
+	string party = 3;
+}
+message voterInfo 
+{
+    string id = 1;
+	string firstName = 2;
+    string lastName = 3;
+    string dob = 4;
+	string country = 5;
+	string region = 6;
+    string constituency = 7;
+}
+message votingInfo 
+{
+	string votingDate = 1;
+	string votingTime = 2;
+}
+message outcomeInfo 
+{
+	string outcomeDeadlineDate = 1;
+	string outcomeDeadlineTime = 2;
+}
