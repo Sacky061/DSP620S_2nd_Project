@@ -1,8 +1,18 @@
 import ballerina/io;
 import ballerinax/kafka; 
-//Removed by Prof Jose: import ballerina/lang.'string;
-//import ballerina/lang.'value;
 import ballerina/log;
+import ballerina/docker;
+
+@docker:Config {
+	name: "cresults",
+	tag: "v1.0"
+}
+
+@kubernetes:Deployment {
+    image:"results",
+    name:"kafka-results"
+}
+
 
 kafka:ConsumerConfiguration consConf = {
     bootstrapServers: "localhost:9092",
