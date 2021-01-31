@@ -1,0 +1,25 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "Voting System",
+  "main": "resolvers.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "okay",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "vote"
+  ],
+  "author": "Simon SS",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.6.0",
+    "graphql-tools": "^4.0.5"
+  }
+}
