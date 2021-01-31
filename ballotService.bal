@@ -1,8 +1,18 @@
 import ballerina/io;
 import ballerinax/kafka; 
-//Removed by Prof Jose: import ballerina/lang.'string;
-//import ballerina/lang.'value;
 import ballerina/log;
+import ballerina/docker;
+
+@docker:Config {
+	name: "cballotservice",
+	tag: "v1.0"
+}
+
+@kubernetes:Deployment {
+    image:"ballot-service",
+    name:"kafka-balotservice"
+}
+
 
 kafka:ConsumerConfiguration consConf = {
     bootstrapServers: "localhost:9092",
